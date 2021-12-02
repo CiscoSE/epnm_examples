@@ -8,8 +8,6 @@ def get_provisioning_request_status(request_id):
     :param request_id: A side of the circuit (device
     :return: request completion status
     """
-    # TODO: payload is too big. Should use jinja or be placed in another file
-
     url = f"https://{os.getenv('EPNM_ENDPOINT')}/restconf/operations/v1/cisco-service-activation:provision-service?request-id={request_id}"
     headers = {
         'Content-Type': 'application/json',
